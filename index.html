@@ -65,7 +65,50 @@
         ar.push(200, 400, 500); // Add items
         ar.pop(); //remove items
         console.log(ar.join('|'));
+
+        // Object
+        person = { 'name' : 'rahman', 'age' : 25, 'mark' : 98 }
+        console.log(person.age);
+
+        persons = [ { 'name' : 'Appu', 'age' : 25, 'place' : 'Calicut' }, { 'name' : 'Deepu', 'age' : 24, 'place' : 'Tirur' } ];
+        console.log(persons);
         
+        // If condition 
+        az = 10;
+        sx = 50;
+        if( az < sx ) {
+            console.log( az + ' grated' );
+        } else {
+            console.log( sx + 'grated' );
+        }
+
+        let fruit = 'mango';
+
+        if (fruit == 'apple') {
+            console.log('this is Apple');
+        } else if (fruit == 'orange') {
+            console.log('this is orange');
+        } else if (fruit == 'banana') {
+            console.log('this is banana');
+        } else {
+            console.log('this is different frut');
+        }
+
+        fruits = 'banana';
+
+        switch (fruits) {
+            case "mango" : console.log('this is mango');
+                break;
+            case 'orange' : console.log('this is orange');
+                break;
+            case 'apple' : console.log('this is apple');
+                break;
+            default: console.log('deffarnt fruits')
+        }
+        
+
+
+
     </script>
 </body>
 
