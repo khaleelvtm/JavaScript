@@ -11,14 +11,29 @@
 </head>
 
 <body>
-    <h1>Login</h1>
+    <h1>Time</h1>
     
-    <span id="countNumber">0</span>
-    <span id="countNumber2">0</span>
-
+    <h3 id="currentTime"></h3>
 
     <script>
-        
+        let timeElement = document.getElementById('currentTime');
+
+        function putZero(number) {
+            return number < 10 ? '0' + number : number;
+        }
+
+        function showTime() {
+            let newDate = new Date();
+            let hours = newDate.getHours();
+            let amPm = hours > 12 ? 'pm' : 'am';
+            let dateString = putZero( hours%12 ) + ' : ' + putZero( newDate.getMinutes() ) + ' : ' + putZero( newDate.getSeconds() ) + ' ' + amPm;
+            timeElement.innerHTML = dateString;
+            setTimeout(function () {
+                showTime();
+            }, 1000);
+        }
+        showTime();
+
     </script>
 </body>
 
