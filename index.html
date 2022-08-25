@@ -8,31 +8,28 @@
     <title>- JS -</title>
 
     <link rel="shortcut icon" href="faveicon.png" type="image/x-icon">
+    <style>
+        table, th, td {
+            border:1px solid black;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Time</h1>
-    
-    <h3 id="currentTime"></h3>
+    <h1>Local Store</h1>
+    <button id="clickButton">Update</button>
+    <table>
+        <thead>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Username</td>
+            <td>Email</td>
+        </thead>
+        <tbody id="userResult"></tbody>
+    </table>
 
     <script>
-        let timeElement = document.getElementById('currentTime');
-
-        function putZero(number) {
-            return number < 10 ? '0' + number : number;
-        }
-
-        function showTime() {
-            let newDate = new Date();
-            let hours = newDate.getHours();
-            let amPm = hours > 12 ? 'pm' : 'am';
-            let dateString = putZero( hours%12 ) + ' : ' + putZero( newDate.getMinutes() ) + ' : ' + putZero( newDate.getSeconds() ) + ' ' + amPm;
-            timeElement.innerHTML = dateString;
-            setTimeout(function () {
-                showTime();
-            }, 1000);
-        }
-        showTime();
+        
 
     </script>
 </body>
