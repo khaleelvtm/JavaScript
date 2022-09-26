@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>- JS - Udemy</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>- JS - Udemy</title>
+		<link rel="shortcut icon" href="faveicon.png" type="image/x-icon" />
+		<style></style>
+	</head>
 
-    <link rel="shortcut icon" href="faveicon.png" type="image/x-icon">
-    <style>
-        
-    </style>
-</head>
+	<body>
+		<h1>JS</h1>
 
-<body>
-    <h1>JS</h1>
+		<script>
+            /* ------------------------------------------------
+            21. Coding Chalange 3
+            --------------------------------------------------*/
 
-    <script>
-        let firstName = 'john';
-        let age = 30;
+			/// Solution
+			function tipCalculater(bill) {
+				let percentage;
+				if (bill < 50) {
+					percentage = .2;
+				} else if (bill > 50 && bill < 200) {
+					percentage = .15;
+				} else {
+					percentage = .1;
+				}
+				return percentage * bill;
+				
+			}
 
-        let job, isMarried;
-        job = 'Teacher';
-        isMarried = false;
+			let bill = [124, 48, 268];
+			let tips =  [tipCalculater(bill[0]), tipCalculater(bill[1]), tipCalculater(bill[2])];
 
-        console.log( firstName + ' is a ' + age + ' Years old' + job + '.Is he married? ' + isMarried );
+			let finalValue = [bill[0] + tips[0], bill[1] + tips[1], bill[2] + tips[2]];
+			console.log(tips, finalValue);
 
-        age = 'twenty eight';
-        job = 'Driver';
-        console.log( firstName + ' is a ' + age + ' Years old' + job + '.Is he married? ' + isMarried );
+			
+			
 
-        let lastName = prompt('What is the last name?');
-        console.log(firstName + ' ' + lastName);
-        
-        
 
-    </script>
-</body>
-
+		</script>
+	</body>
 </html>
