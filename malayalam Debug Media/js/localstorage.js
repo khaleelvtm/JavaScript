@@ -9,13 +9,30 @@
 
 // localStorage.clear();
 
-const nameList = {
-	name: "John",
-	age: 25,
-	id: 0,
+// const nameList = {
+// 	name: "John",
+// 	age: 25,
+// 	id: 0,
+// };
+
+// localStorage.setItem("Data", JSON.stringify(nameList));
+// console.log(localStorage.getItem("Data"));
+
+// console.log(JSON.parse(localStorage.getItem("Data")));
+
+const input = document.querySelector("input");
+const loginBtn = document.querySelector("#login");
+const logOut = document.querySelector("#logout");
+const message = document.querySelector(".title");
+
+loginBtn.onclick = () => {
+	if (input.value) {
+		localStorage.setItem("token", input.value);
+		message.innerHTML = "Welcome User";
+	}
 };
 
-localStorage.setItem("Data", JSON.stringify(nameList));
-console.log(localStorage.getItem("Data"));
-
-console.log(JSON.parse(localStorage.getItem("Data")));
+// logOut.onclick = () => {
+// 	localStorage.clear();
+// 	location.reload();
+// };
