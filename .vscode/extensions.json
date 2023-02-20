@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "ritwickdey.liveserver",
+        "zhuangtongfa.material-theme",
+        "syler.sass-indented",
+        "formulahendry.auto-rename-tag"
+    ]
+}
