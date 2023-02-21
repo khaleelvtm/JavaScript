@@ -383,3 +383,31 @@ clickButtonTwo.onclickFun(() => {
 });
 
 // Prototype
+class ButtonTwo {
+	constructor(name) {
+		this.button = document.createElement("button");
+		this.button.innerHTML = name;
+		document.body.appendChild(this.button);
+	}
+	onclickFun(fun) {
+		this.button.onclick = fun;
+	}
+}
+
+let clickButtonThree = new ButtonTwo("CLick 1");
+console.log(clickButtonThree);
+
+function NewButton(name) {
+	this.button = document.createElement("button");
+	this.button.innerHTML = name;
+	document.body.appendChild(this.button);
+}
+
+NewButton.prototype.onClickFun = function (fun) {
+	this.button.onclick = fun;
+};
+
+let b2 = new NewButton("Hi!");
+
+console.dir(NewButton);
+console.dir(b2);
