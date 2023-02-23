@@ -1,7 +1,23 @@
-import { addArray } from "./21-import-export.js";
-import { addArray as demoArr } from "./main2.js";
+import { addArray } from "./main2.js";
 
-let value = addArray([5, 2, 3]);
-let value2 = demoArr([5, 2, 3], [8, 5, 9]);
-console.log(value);
-console.log(value2);
+let name = "My Name Is Rahman";
+
+let options = {
+	version: "2.0",
+	author: "John Smith",
+};
+
+function addAll(arr = []) {
+	logData("addAll");
+	return arr.reduce((total, item) => total + item, 0);
+}
+export default function findMax(arr = []) {
+	logData("findMax");
+	return Math.max(...arr);
+}
+function logData(val) {
+	console.log("INSIDE", val);
+}
+
+export { name as myname, options, addAll, findMax, logData };
+export { addArray } from "./main2.js";
