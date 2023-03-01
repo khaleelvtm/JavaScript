@@ -33,7 +33,7 @@ const product = [
 document.body.innerHTML = product.map((item) => {
 	return `
     <div>
-        <h1>Product Name: ${item.productName}</h1>
-        <p>Product Price: ${item.price}</p>
+        <h1>Name: ${item.productName}</h1>
+        <p>Price: ${item.price}</p>
     </div>`;
 });
