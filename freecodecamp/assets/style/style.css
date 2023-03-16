@@ -1,0 +1,7 @@
+.container {
+    background-color: aliceblue;
+    border: 2px solid #aaa;
+
+    width: min(100% - 30px, 960px);
+    margin-inline: auto;
+}
