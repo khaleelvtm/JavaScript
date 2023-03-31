@@ -14,4 +14,42 @@ const person = {
 
 person.fullName = "Wills Node";
 
-console.log(person);
+// console.log(person);
+
+//----
+
+const circle = {
+	raduis: 1,
+	draw() {
+		console.log("Drawing Start!");
+	},
+};
+
+//console.log("Circle:", circle);
+// const anothOne = {};
+// for (let key in circle) {
+// 	anothOne[key] = circle[key];
+// 	console.log("another:", anothOne);
+// }
+
+const anothOne = Object.assign(
+	{
+		color: "red",
+		age: 34,
+	},
+	circle
+);
+
+// console.log(anothOne);
+
+const video = {
+	title: "Start",
+	tags: ["one", "two", "three"],
+	showTag() {
+		this.tags.forEach(function (tag) {
+			console.log("TAG: ", this.title, tag);
+		}, this);
+	},
+};
+
+video.showTag();
