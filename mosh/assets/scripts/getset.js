@@ -47,9 +47,29 @@ const video = {
 	tags: ["one", "two", "three"],
 	showTag() {
 		this.tags.forEach(function (tag) {
-			console.log("TAG: ", this.title, tag);
+			// console.log("TAG: ", this.title, tag);
 		}, this);
 	},
 };
 
 video.showTag();
+
+// ---
+let number = [1, 3, -4, 6];
+
+// let filerNUmber = number
+// 	.filter((numberValue) => numberValue >= 0)
+// 	.map((numberValue) => ({ value: numberValue }));
+
+//console.log(items);
+
+// let sum = 0;
+// for (let n of number) {
+// 	sum += n;
+// }
+
+let sum = number.reduce((accumulator, currentValue) => {
+	return accumulator + currentValue;
+}, 0);
+
+console.log(sum);
