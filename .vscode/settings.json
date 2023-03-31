@@ -4,5 +4,5 @@
     },
     "editor.formatOnSave": true,
     "editor.tabSize": 4,
-    "editor.fontFamily": "'Fira Sans', Menlo, Monaco, 'Courier New', monospace"
+    "editor.fontFamily": "'Fira Mono', Menlo, Monaco, 'Courier New', monospace"
 }
