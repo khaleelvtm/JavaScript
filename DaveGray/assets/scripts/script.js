@@ -47,3 +47,12 @@ let newArrA = ["A", "B", "C"];
 let newArrB = ["D", "E", "F"];
 let arrAB = newArrA.concat(newArrB);
 console.log(arrAB);
+
+//
+const arrayFunc = () => {
+	let randomNumber = Math.floor(Math.random() * 3);
+	let randomvalues = ["rock", "paper", "scissors"];
+	return randomvalues[randomNumber];
+};
+//arrayFunc();
+console.log("random:", arrayFunc());
