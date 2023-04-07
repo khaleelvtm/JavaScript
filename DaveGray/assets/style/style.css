@@ -7,3 +7,22 @@
 input:focus {
     outline: none;
 }
+
+ul {
+    padding: 50px;
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+li {
+    background-color: rgb(230, 230, 230);
+    padding: 10px;
+    display: inline-flex;
+    width: 25%;
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+}
