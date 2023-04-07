@@ -56,3 +56,67 @@ const arrayFunc = () => {
 };
 //arrayFunc();
 console.log("random:", arrayFunc());
+
+//////
+class Pizza {
+	constructor(pizaType, pizaSize) {
+		this.type = pizaType;
+		this.size = pizaSize;
+		this.crust = "Original";
+		this.topings = [];
+	}
+	getCrust() {
+		return this.crust;
+	}
+	setCrust(pizzaCrust) {
+		this.crust = pizzaCrust;
+	}
+	getTopings() {
+		return this.topings;
+	}
+	setTopings(toping) {
+		this.topings.push(toping);
+	}
+	bake() {
+		console.log(
+			`Backing a ${this.size} ${this.crust} ${this.type} crust pizza.`
+		);
+	}
+}
+
+let myPizza = new Pizza("peporoni", "small");
+myPizza.setCrust("Dublicate");
+myPizza.bake();
+myPizza.setTopings("one");
+myPizza.setTopings("Two");
+
+console.log(myPizza.getCrust());
+console.log(myPizza.getTopings());
+
+////
+
+class Pizza {
+	constructor(pizzaSize) {
+		this.size = pizzaSize;
+		this.crust = "Original";
+	}
+	getCrust() {
+		return this.crust;
+	}
+	setCrust(pizzaCrust) {
+		this.crust = pizzaCrust;
+	}
+}
+
+class SpecialPizza extends Pizza {
+	constructor(pizzaSize) {
+		super(pizzaSize);
+		this.type = "The work";
+	}
+	slice() {
+		console.log(`Our ${this.type} ${this.size} pizza has 8 slices.`);
+	}
+}
+
+let mySpecialPizza = new SpecialPizza("medium");
+mySpecialPizza.slice();
