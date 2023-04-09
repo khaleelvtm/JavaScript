@@ -78,4 +78,29 @@ userSolution(users);
 
 // ---- 4
 
+// ([1,2,3], '#')
+// #
+// ##
+// ###
+/*
+let store = '';
+let histogram = (arr, obj) => {
+    arr.map((number) => console.log(obj.repeat(number)));
+}
+histogram([2, 4, 3], '#');
+*/
 
+// ---- 5
+let store = [];
+const rangeNumber = (startNumber, endNumber) => {
+    if (startNumber <= endNumber) {
+        store.push(startNumber)
+        startNumber = startNumber + 1;
+    } else {
+        return
+    }
+    rangeNumber(startNumber, endNumber)
+    return store;
+}
+
+console.log(rangeNumber(5, 15));
