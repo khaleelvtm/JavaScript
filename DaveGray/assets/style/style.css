@@ -26,3 +26,30 @@ li {
     align-items: center;
     justify-content: center;
 }
+
+.phone-form {
+    padding: 50px;
+    text-align: center;
+}
+
+.phone-form input {
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.phone-format {
+    display: none;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.block {
+    display: block;
+}
+
+.invalid {
+    color: red;
+}
