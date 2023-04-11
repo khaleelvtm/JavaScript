@@ -1,5 +1,5 @@
 // Chat
-
+let findButton, selectIframe;
 window.Tawk_API = window.Tawk_API || {};
 const widgetOpen = function () {
 	var s1 = document.createElement("script"),
@@ -9,6 +9,8 @@ const widgetOpen = function () {
 	s1.charset = "UTF-8";
 	s1.setAttribute("crossorigin", "*");
 	s0.parentNode.insertBefore(s1, s0);
+	findButton && (findButton[0].style.display = "block");
+	window.Tawk_API.maximize();
 };
 window.Tawk_API.onLoad = () => {
 	window.Tawk_API.maximize();
@@ -18,8 +20,8 @@ const widgetBtn = document.getElementById("clickBtn");
 widgetBtn.addEventListener("click", widgetOpen);
 
 const findIframeSection = () => {
-	let selectIframe = document.getElementsByTagName("iframe");
-	let findButton =
+	selectIframe = document.getElementsByTagName("iframe");
+	findButton =
 		selectIframe[0].contentWindow.document.querySelectorAll("button");
 	findButton[0].addEventListener("click", (event) => {
 		findButton[0].style.display = "none";
