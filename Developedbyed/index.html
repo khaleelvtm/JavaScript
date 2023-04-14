@@ -7,29 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>- developedbyed -</title>
     <link rel="shortcut icon" href="../star.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/menu.css">
 </head>
 
 
 <body>
 
-    <div class="carousel-contaner">
-        <button id="prevBtn">prev</button>
-        <button id="nextBtn">next</button>
-        <div class="carousel-slide">
-            <img src="assets/images/slider-05.jpg" id="lastClone" alt="" srcset="">
-            <img src="assets/images/slider-01.jpg" alt="" srcset="">
-            <img src="assets/images/slider-02.jpg" alt="" srcset="">
-            <img src="assets/images/slider-03.jpg" alt="" srcset="">
-            <img src="assets/images/slider-04.jpg" alt="" srcset="">
-            <img src="assets/images/slider-05.jpg" alt="" srcset="">
-            <img src="assets/images/slider-01.jpg" id="firstClone" alt="" srcset="">
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h2>MAINLOGO</h2>
+            </div>
+            <ul class="nav-list">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">News</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+            <button class="burger-menu">
+                <span class="one"></span>
+                <span class="two"></span>
+                <span class="three"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- <section class="button-section">
+        <div class="button-col">
+            <button class="anBtn">B</button>
+            <span class="sm-btn">A</span>
+            <span class="sm-btn">S</span>
         </div>
-    </div>
+        <script>
+            let anBtn = document.querySelector(".anBtn");
+            let btnCol = document.querySelector(".button-col");
 
+            anBtn.addEventListener("click", () => {
+                btnCol.classList.toggle("open");
+            });
 
+        </script>
+    </section> -->
 
-    <script type="module" src="assets/scripts/slider.js"></script>
+    <script src="assets/scripts/script.js"></script>
 </body>
 
 </html>

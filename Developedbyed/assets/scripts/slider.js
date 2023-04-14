@@ -23,13 +23,14 @@ prevBtn.addEventListener("click", () => {
 });
 
 carousalSlide.addEventListener("transitionend", () => {
-	console.log("img:", carousalImages[carousalImages.length - 1]);
+	console.log("img:", carousalImages[0]);
+
 	if (carousalImages[counter] === carousalImages[0]) {
 		carousalSlide.style.transition = "none";
 		counter = carousalImages.length - 2;
 		carousalSlide.style.transform = `translateX(${-size * counter}px)`;
 	}
-	if (carousalImages[counter].id === carousalImages.length - 1) {
+	if (carousalImages[counter].id === "firstClone") {
 		carousalSlide.style.transition = "none";
 		counter = carousalImages.length - counter;
 		carousalSlide.style.transform = `translateX(${-size * counter}px)`;
