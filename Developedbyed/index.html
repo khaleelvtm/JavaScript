@@ -7,50 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>- developedbyed -</title>
     <link rel="shortcut icon" href="../star.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/style/menu.css">
+    <link rel="stylesheet" href="assets/style/wether.css">
 </head>
 
 
 <body>
+    <div class="location">
+        <h1 class="location-timezone">TimeZone</h1>
+        <p class="icon"><img src="https://openweathermap.org/img/wn/10d@2x.png" alt=""></p>
+    </div>
 
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <h2>MAINLOGO</h2>
-            </div>
-            <ul class="nav-list">
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Service</a></li>
-                <li><a href="">News</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-            <button class="burger-menu">
-                <span class="one"></span>
-                <span class="two"></span>
-                <span class="three"></span>
-            </button>
-        </nav>
-    </header>
-
-    <!-- <section class="button-section">
-        <div class="button-col">
-            <button class="anBtn">B</button>
-            <span class="sm-btn">A</span>
-            <span class="sm-btn">S</span>
+    <div class="temperature">
+        <div class="degree-section">
+            <h2 class="temperature-degree">00</h2>
+            <span>F</span>
         </div>
-        <script>
-            let anBtn = document.querySelector(".anBtn");
-            let btnCol = document.querySelector(".button-col");
+        <div class="temperature-description">Message </div>
+    </div>
 
-            anBtn.addEventListener("click", () => {
-                btnCol.classList.toggle("open");
-            });
 
-        </script>
-    </section> -->
-
-    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/wether.js"></script>
 </body>
 
 </html>
