@@ -13,8 +13,9 @@ html {
 }
 
 body {
+    background-color: aliceblue;
     margin: 0;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     /* display: flex;
     justify-content: center; */
     align-items: center;
@@ -307,4 +308,40 @@ form button {
 }
 h2 {
     padding: 0 50px;
+}
+
+
+/* - Groceries ----------------------------------------------------------------*/
+.groceries {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin-top: 50px;
+    background-color: white;
+    border: 1px solid #d0e0ee;
+    border-radius: 20px;
+    padding: 20px;
+}
+.product-list {
+    margin-bottom: 20px;
+}
+.product-list > li {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 2px 1px;
+}
+.product-list > li ul {
+    display: table-row;
+    margin: 1px;
+}
+.product-list > li ul li {
+    display: table-cell;
+    background-color: burlywood;
+    padding: 15px;
+}
+.product-list > li ul.head li {
+    background-color: coral;
+    font-weight: bold;
 }

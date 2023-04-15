@@ -1,0 +1,9 @@
+{
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+    },
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.fontFamily": "'Fira Mono', Menlo, Monaco, 'Courier New', monospace"
+    
+}
