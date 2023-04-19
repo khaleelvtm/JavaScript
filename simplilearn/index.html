@@ -7,33 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>- simplilearn -</title>
     <link rel="shortcut icon" href="../star.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/style/quiz.css ">
+    <link rel="stylesheet" href="assets/style/calculator.css ">
 </head>
 
 
 <body>
+
     <div class="container">
-        <div id="questionContainer" class="question-container hide">
-            <div id="question"></div>
-            <div id="answerButtons" class="answer-buttons">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
-        </div>
-        <div class="controls">
-            <button id="startButton" class="start-button btn">Start</button>
-            <button id="nextButton" class="next-button btn hide">Next</button>
-        </div>
-        <div class="score">
-            <span id="right-answer"></span>
-        </div>
+        <table class="calculator">
+            <tr>
+                <td colspan="3"><input type="text" id="result" class="result-screen"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" class="btn number" onclick="display('1')"></td>
+                <td><input type="button" value="2" class="btn number" onclick="display('2')"></td>
+                <td><input type="button" value="3" class="btn number" onclick="display('3')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" class="btn number" onclick="display('4')"></td>
+                <td><input type="button" value="5" class="btn number" onclick="display('5')"></td>
+                <td><input type="button" value="6" class="btn number" onclick="display('6')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" class="btn number" onclick="display('7')"></td>
+                <td><input type="button" value="8" class="btn number" onclick="display('8')"></td>
+                <td><input type="button" value="9" class="btn number" onclick="display('9')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="/" class="btn operator" onclick="display('/')"></td>
+                <td><input type="button" value="-" class="btn operator" onclick="display('-')"></td>
+                <td><input type="button" value="*" class="btn operator" onclick="display('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="+" class="btn operator" onclick="display('+')"></td>
+                <td><input type="button" value="C" class="btn clear" onclick="clearScreen()"></td>
+                <td><input type="button" value="." class="btn operator" onclick="display('.')"></td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type="button" value="=" class="btn operator" onclick='solve()'></td>
+            </tr>
+        </table>
     </div>
 
 
-
-    <script src="assets/scripts/quiz.js"></script>
+    <script src="assets/scripts/calculator.js"></script>
 </body>
 
 </html>
