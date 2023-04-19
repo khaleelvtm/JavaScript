@@ -7,18 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>- simplilearn -</title>
     <link rel="shortcut icon" href="../star.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/quiz.css ">
 </head>
 
 
 <body>
+    <div class="container">
+        <div id="questionContainer" class="question-container hide">
+            <div id="question"></div>
+            <div id="answerButtons" class="answer-buttons">
+                <button class="btn">Answer 1</button>
+                <button class="btn">Answer 2</button>
+                <button class="btn">Answer 3</button>
+                <button class="btn">Answer 4</button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startButton" class="start-button btn">Start</button>
+            <button id="nextButton" class="next-button btn hide">Next</button>
+        </div>
+        <div class="score">
+            <span id="right-answer"></span>
+        </div>
+    </div>
 
-    <!-- <form>
-        <input id="emailAddress" type="text" placeholder="E-mail">
-        <button onClick='formValidation()' type="button">Submit</button>
-    </form> -->
 
-    <script src="assets/scripts/main.js"></script>
+
+    <script src="assets/scripts/quiz.js"></script>
 </body>
 
 </html>
