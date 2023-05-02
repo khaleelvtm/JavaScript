@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-weight: 300;
+    background-color: azure;
+}
+
+.game-section {
+    margin: 50px auto;
+    text-align: center;
+}
+
+canvas {
+    background-color: aliceblue;
+    border: 1px solid rgb(204, 227, 227);
+    border-radius: 10px;
+}
+
+.relative {
+    position: absolute;
+    top: 760px;
+    left: 120px;
+}
