@@ -1,4 +1,3 @@
-/*
 a = 5;
 b = 12;
 let number = a + b;
@@ -10,13 +9,12 @@ while (number < 25) {
     number++;
 }
 
-
 let data = "this is a string";
 data = data.charAt(2);
 
 console.log(data);
 
-let number = Math.E;
+let numberTwo = Math.E;
 
 console.log("math:", Math);
 console.log("E:", Math.E);
@@ -32,10 +30,8 @@ console.log("----------------------------------------------------------------");
 
 console.log("abs:", Math.abs(5 - 8));
 
-
 let todaydate = new Date();
 console.log(todaydate.getFullYear());
-
 
 let button = document.querySelector(".btn");
 let content = document.querySelector(".content");
@@ -55,7 +51,6 @@ button.addEventListener("click", () => {
 
     console.log(select.previousSibling);
 });
-*/
 
 function validationForm() {
     let inputs = document.querySelectorAll("input");
@@ -70,4 +65,4 @@ function validationForm() {
 
 confirm("start new data");
 
-// EPI: 45
+console.log(Number.MIN_VALUE);
