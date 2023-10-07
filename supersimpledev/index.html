@@ -26,6 +26,52 @@
 <body>
 
     <h1>Objects</h1>
+    <!-- <div>
+        <button id="rockBtn" onclick="playGame('Rock')">Rock</button>
+        <button onclick="playGame('Paper')">Paper</button>
+        <button onclick="playGame('Scissors')">Scissors</button>
+        <button onclick="resetScore()">Reset</button>
+    </div> -->
+
+    <div class="calculator">
+        <div>
+            <input type="text" placeholder="" value="" id="input">
+        </div>
+        <div class="row">
+            <button class="btn" onclick="calculation += '1'">1</button>
+            <button class="btn" onclick="calculation += '2'">2</button>
+            <button class="btn" onclick="calculation += '3'">3</button>
+            <button class="btn" onclick="calculation += ' + '">+</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick="calculation += '4'">4</button>
+            <button class="btn" onclick="calculation += '5'">5</button>
+            <button class="btn" onclick="calculation += '6'">6</button>
+            <button class="btn" onclick="calculation += ' - '">-</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick="calculation += '7'">7</button>
+            <button class="btn" onclick="calculation += '8'">8</button>
+            <button class="btn" onclick="calculation += '9'">9</button>
+            <button class="btn" onclick="calculation += ' * '">*</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick="calculation += '0'">0</button>
+            <button class="btn" onclick="calculation += '.'">.</button>
+            <button class="btn" onclick="
+                calculation = eval(calculation) 
+                localStorage.setItem('calculation', calculation)
+            ">=</button>
+            <button class="btn" onclick="calculation += ' / '">/</button>
+        </div>
+        <div class="row">
+            <button class="btn" onclick="
+                calculation = ' '
+                localStorage.setItem('calculation', calculation)
+            ">Clear</button>
+        </div>
+    </div>
+
 
 
 
