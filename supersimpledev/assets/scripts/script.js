@@ -1,5 +1,31 @@
-// Objects
-let score = JSON.parse(localStorage.getItem("score"));
+// DOM
+//document.title = "Welcome to";
+//document.body.innerText = "This";
+
+// let btnElement = document.querySelector(".dom-button");
+// console.log(btnElement);
+
+// subscribeButton.addEventListener("click", function () {
+// 	subscribeButton.innerHTML = "Subscribed";
+// });
+
+/*
+// Game Code
+function clickSubscribe() {
+	let subscribeButton = document.querySelector(".sub-button");
+
+	if (subscribeButton.innerHTML === "Subscribe") {
+		subscribeButton.innerHTML = "Subscribed";
+	} else {
+		subscribeButton.innerHTML = "Subscribe";
+	}
+}
+
+let score = JSON.parse(localStorage.getItem("score")) || {
+	win: 0,
+	losses: 0,
+	ties: 0,
+};
 
 function pickComputerMove() {
 	let computerGame = "";
@@ -18,8 +44,6 @@ function pickComputerMove() {
 
 function playGame(playerMove) {
 	let computerGame = pickComputerMove();
-	console.log(computerGame);
-
 	let gameResult = "";
 
 	if (playerMove) {
@@ -55,15 +79,22 @@ function playGame(playerMove) {
 		score.ties += 1;
 	}
 
-	// 	alert(
-	// 		`Your are picked ${playerMove}. Computer Picked ${computerGame}. ${gameResult}
-	// WIN: ${score.win} - LOSE: ${score.losses} - TIE: ${score.ties}`
-	// 	);
-
 	localStorage.setItem("score", JSON.stringify(score));
+	updateScore();
 
-	console.log(`Your are picked ${playerMove}. Computer Picked ${computerGame}. ${gameResult}
-	WIN: ${score.win}, LOSE: ${score.losses}, TIE: ${score.ties}`);
+	let gameResultInfo = document.querySelector(".game-result");
+	gameResultInfo.innerHTML = gameResult;
+	if (gameResult === "You Lose") {
+		gameResultInfo.style.color = "red";
+	} else if (gameResult === "You Win!") {
+		gameResultInfo.style.color = "green";
+	} else {
+		gameResultInfo.style.color = "blue";
+	}
+
+	document.querySelector(
+		".game-move"
+	).innerHTML = `Your are picked <u>${playerMove}</u>. Computer Picked <u>${computerGame}</u>`;
 }
 
 function resetScore() {
@@ -72,91 +103,61 @@ function resetScore() {
 	score.ties = 0;
 
 	localStorage.removeItem("score");
-
-	console.log(`Game Rested!
-	WIN: ${score.win}, LOSE: ${score.losses}, TIE: ${score.ties}`);
+	updateScore();
 }
 
-let products = {
-	item_name: "LP",
-	"item-size": 45,
-	rating: {
-		star: 4.5,
-		count: 56,
-	},
-	objFunction() {
-		console.log("This is testing message!");
-	},
-};
+function updateScore() {
+	let gameScore = `WIN: ${score.win}, LOSE: ${score.losses}, TIE: ${score.ties}`;
+	document.querySelector(".game-score").innerHTML = gameScore;
+}
 
-// console.log(products);
-// products.objFunction();
+updateScore();
+*/
+// --------------
 
-// console.log(JSON.stringify(products));
-// let jsonString = JSON.stringify(products);
+function calculateFun() {
+	let priceValue = document.querySelector("input").value;
 
-// console.log(JSON.parse(jsonString));
+	if (priceValue <= 40) {
+		priceValue = Math.round(Number(priceValue) + 10);
+	}
 
-// console.log(localStorage);
+	document.querySelector(".calculate-result").innerHTML = `$${priceValue}`;
+}
 
-// console.log("user name".length);
-// console.log("user name".toUpperCase());
-// console.log("user name".toLocaleLowerCase());
-
-// let newObjects = {
-// 	producname: "Mobile Phone",
-// 	price: 799,
-// };
-// let { producname, price } = newObjects;
-// console.log(producname);
-
-let amzon = {
-	name: "basketball",
-	price: 2095,
-};
-console.log(amzon);
-
-amzon.price += 500;
-console.log(amzon);
-
-amzon["delivery-time"] = "3 Days";
-console.log(amzon);
-
-let product1 = {
-	name: "Shirt",
-	price: 2095,
-};
-let product2 = {
-	name: "Shoes",
-	price: 1025,
-};
-
-function comparePrice(product1, product2) {
-	if (product1.price < product2.price) {
-		return product1;
-	} else {
-		return product2;
+function keyEnter(event) {
+	if (event.key === "Enter") {
+		calculateFun();
 	}
 }
-// console.log(comparePrice(product1, product2));
 
-// function isSameProduct(product1, product2) {
-// 	return product1.name === product2.name && product1.price === product2.price;
-// }
-// console.log(isSameProduct(product1, product2));
+//String(45);
+//console.log("50" - 15);
+/*
+console.log(document.querySelector("button"));
 
-// console.log("Good Morning".toLowerCase());
-
-// let text = "testing";
-// console.log(text.repeat(4));
-
-let calculation = "";
-let btnClcik = document.getElementsByClassName("btn");
-let value = document.getElementById("input");
-
-for (let i = 0; i < btnClcik.length; i++) {
-	btnClcik[i].addEventListener("click", function () {
-		console.log(calculation);
-		value.value = calculation;
-	});
+function btnTwo() {
+	document.querySelector(".btnTwo").innerHTML = "Two Done";
 }
+
+let dataResult = document.querySelector(".dataResult");
+function btnHeads() {
+	dataResult.innerHTML = "You chose: heads";
+}
+function btnTails() {
+	dataResult.innerHTML = "You chose: tails";
+}
+
+function submitButton() {
+	let yourName = document.querySelector(".select-name").value;
+	document.querySelector(
+		".show-name"
+	).innerHTML = `Your name is: ${yourName}`;
+}
+
+function nameEnter(event) {
+	if (event.key === "Enter") {
+		submitButton();
+	}
+}
+*/
