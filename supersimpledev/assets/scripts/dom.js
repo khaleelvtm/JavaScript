@@ -116,19 +116,19 @@ updateScore();
 // --------------
 
 function calculateFun() {
-	let priceValue = document.querySelector("input").value;
+  let priceValue = document.querySelector("input").value;
 
-	if (priceValue <= 40) {
-		priceValue = Math.round(Number(priceValue) + 10);
-	}
+  if (priceValue <= 40) {
+    priceValue = Math.round(Number(priceValue) + 10);
+  }
 
-	document.querySelector(".calculate-result").innerHTML = `$${priceValue}`;
+  document.querySelector(".calculate-result").innerHTML = `$${priceValue}`;
 }
 
 function keyEnter(event) {
-	if (event.key === "Enter") {
-		calculateFun();
-	}
+  if (event.key === "Enter") {
+    calculateFun();
+  }
 }
 
 //String(45);
