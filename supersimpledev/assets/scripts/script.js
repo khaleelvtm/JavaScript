@@ -1,37 +1,23 @@
 // Addvanced Function
 /*
-let newFunction = function () {
-	console.log("welcome");
+let newFun = (val1, val2) => {
+	console.log("New function");
+	return val1;
 };
 
-console.log(newFunction);
-newFunction();
+newFun(5);
 
-let object = {
-	num: 12,
-	funObject() {
-		console.log("new object");
-	},
+let functioTwo = (val) => {
+	console.log(val + 1);
 };
-object.funObject();
+functioTwo(5);
 
-// Passing function
-function run(parm) {
-	parm();
-}
-run(function () {
-	console.log("hello");
+let functionThree = () => 3 * 6;
+console.log(functionThree());
+
+["new store", "second store", "three store"].forEach((value, index) => {
+	console.log(index, value);
 });
-
-// SetTimeout
-setTimeout(function () {
-	console.log("set time");
-}, 3000);
-
-// SetInterval
-setInterval(function () {
-	console.log("set interval");
-}, 3000);
 */
 /*
 // Game Code
@@ -41,7 +27,7 @@ let score = JSON.parse(localStorage.getItem("score")) || {
 	ties: 0,
 };
 
-function pickComputerMove() {
+const pickComputerMove = () => {
 	let computerGame = "";
 	let selectNumber = Math.random();
 
@@ -54,9 +40,29 @@ function pickComputerMove() {
 	}
 
 	return computerGame;
-}
+};
 
-function playGame(playerMove) {
+document.querySelector(".btn-rock").addEventListener("click", () => {
+	playGame("Rock");
+});
+document.querySelector(".btn-paper").addEventListener("click", () => {
+	playGame("Paper");
+});
+document.querySelector(".btn-scissors").addEventListener("click", () => {
+	playGame("Scissors");
+});
+
+document.body.addEventListener("keydown", (event) => {
+	if (event.key === "r") {
+		playGame("Rock");
+	} else if (event.key === "p") {
+		playGame("Paper");
+	} else if (event.key === "s") {
+		playGame("Scissors");
+	}
+});
+
+const playGame = (playerMove) => {
 	let computerGame = pickComputerMove();
 	let gameResult = "";
 
@@ -111,29 +117,35 @@ function playGame(playerMove) {
 	).innerHTML = `Your are picked <u>${playerMove}</u>. Computer Picked <u>${computerGame}</u>`;
 
 	console.log(gameResult);
-}
+};
 
-function resetScore() {
+document.querySelector(".btn-reset").addEventListener("click", () => {
+	resetScore();
+});
+const resetScore = () => {
 	score.win = 0;
 	score.losses = 0;
 	score.ties = 0;
 
 	localStorage.removeItem("score");
 	updateScore();
-}
+};
 
-function updateScore() {
+const updateScore = () => {
 	let gameScore = `WIN: ${score.win}, LOSE: ${score.losses}, TIE: ${score.ties}`;
 	document.querySelector(".game-score").innerHTML = gameScore;
-}
+};
 
 updateScore();
 
 let isAutoPlaying = false;
 let intervalId;
-function autoPlay() {
+document.querySelector(".btn-reset").addEventListener("click", () => {
+	resetScore();
+});
+const autoPlay = () => {
 	if (!isAutoPlaying) {
-		intervalId = setInterval(function () {
+		intervalId = setInterval(() => {
 			let playerMove = pickComputerMove();
 			playGame(playerMove);
 		}, 2000);
@@ -142,12 +154,18 @@ function autoPlay() {
 		clearInterval(intervalId);
 		isAutoPlaying = false;
 	}
-}
+};
 */
 /*
+let clickButton = document.querySelector(".click-button");
+const eventFun = () => {
+	console.log("Clicked!");
+};
 
-
-
+clickButton.addEventListener("click", eventFun);
+clickButton.removeEventListener("click", eventFun);
+*/
+/*
 let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 let todoValue = document.querySelector(".todo-value");
 let todoListItems = document.querySelector(".todo-list");
@@ -161,16 +179,29 @@ function randerTodoItem() {
 		let html = `
 			<li>
 				${name} ${date}
-				<button onclick="todoList.splice(${index}, 1); randerTodoItem(); saveStorage()">Delete</button>
+				<button class="btn-delete">Delete</button>
 			</li>
 		`;
 		todoHTML += html;
 	});
- 
+
 	todoListItems.innerHTML = todoHTML;
+
+	document.querySelectorAll(".btn-delete").forEach((deleteBtn, index) => {
+		deleteBtn.addEventListener("click", () => {
+			console.log(deleteBtn, index);
+			todoList.splice(index, 1);
+			randerTodoItem();
+			saveStorage();
+		});
+	});
 }
 
 randerTodoItem();
+
+document.querySelector(".add-button").addEventListener("click", () => {
+	todoAddItem();
+});
 function todoAddItem() {
 	let name = todoValue.value;
 	let date = todoDate.value;
@@ -188,123 +219,249 @@ function todoAddItem() {
 function saveStorage() {
 	localStorage.setItem("todoList", JSON.stringify(todoList));
 }
+*/
+/*
+let filterArry = [1, -5, 7];
+console.log(
+	filterArry.filter((value, index) => {
+		// if (value >= 0) {
+		// 	return true;
+		// } else {
+		// 	return false;
+		// }
+		return value >= 0;
+	})
+);
+console.log(filterArry);
 
+let mapArry = [1, 2, 4];
+console.log(
+	mapArry.map((value, index) => {
+		return value * 3;
+	})
+);
 
-["John Smith", "Will Smith", "Done Ine", "Mark Antony"].forEach(function (
-	value,
-	index
-) {
-	if (value === "Done Ine") {
-		return;
-	}
-	console.log(index, value);
+console.log(mapArry.map((value) => value * 4));
+*/
+/*
+// Chalange - J & K
+const multiply = (a, b) => console.log(a * b);
+multiply(2, 3);
+multiply(7, 10);
+
+// Chalange - L
+const countPositive = (nums) => {
+	let positiveNumber = 0;
+	nums.forEach((value, index) => {
+		if (value >= 0) {
+			positiveNumber++;
+		}
+	});
+	return positiveNumber;
+};
+console.log(countPositive([1, -3, 5]));
+console.log(countPositive([-1, 3, -5, 7, 10]));
+
+// Chalange - M
+const addNum = (arry, num) => {
+	return arry.map((value) => value + num);
+};
+console.log(addNum([3, 5, 6], 2));
+
+// Chalange - N
+const removeEgg = (foods) => {
+	return foods.filter((food) => food !== "egg");
+};
+console.log(removeEgg(["egg", "apple", "egg", "egg", "ham"]));
+
+// Chalange - O
+const removeEggs = (foods) => {
+	let eggRemoved = 0;
+	return foods.filter((value) => {
+		if (value === "egg" && eggRemoved < 2) {
+			eggRemoved++;
+			return false;
+		}
+		return true;
+	});
+};
+console.log(removeEggs(["egg", "apple", "egg", "egg", "ham"]));
+
+// Chalange - P & Q
+let startButton = document.querySelector(".start-button");
+startButton.addEventListener("click", () => {
+	startButton.innerHTML = "Loading...";
+	setTimeout(() => {
+		startButton.innerHTML = "Finished!";
+	}, 2000);
 });
 */
-// Chalange - A
-let add = function () {
-	console.log(2 + 3);
+// Chalange - R, S, T, U, V, W
+let score = JSON.parse(localStorage.getItem("score")) || {
+	win: 0,
+	losses: 0,
+	ties: 0,
 };
-add();
 
-// Chalange - B
-function runTwice(fun) {
-	fun();
-}
-runTwice(function () {
-	console.log("12b");
+const pickComputerMove = () => {
+	let computerGame = "";
+	let selectNumber = Math.random();
+
+	if (selectNumber >= 0 && selectNumber < 1 / 3) {
+		computerGame = "Rock";
+	} else if (selectNumber >= 1 / 3 && selectNumber < 2 / 3) {
+		computerGame = "Paper";
+	} else if (selectNumber >= 2 / 3 && selectNumber < 1) {
+		computerGame = "Scissors";
+	}
+
+	return computerGame;
+};
+
+document.querySelector(".btn-rock").addEventListener("click", () => {
+	playGame("Rock");
 });
-runTwice(add);
+document.querySelector(".btn-paper").addEventListener("click", () => {
+	playGame("Paper");
+});
+document.querySelector(".btn-scissors").addEventListener("click", () => {
+	playGame("Scissors");
+});
 
-// Chalange - C
-let startButton = document.querySelector(".start-button");
-function startFun() {
-	setTimeout(function () {
-		startButton.innerHTML = "Finished!";
-	}, 3000);
-}
-
-// Chalange - D
-let startButtonTwo = document.querySelector(".start-button-two");
-function startFunTwo() {
-	startButtonTwo.innerHTML = "Loading...";
-	setTimeout(function () {
-		startButtonTwo.innerHTML = "Finished!";
-	}, 1000);
-}
-
-// Chalange - E & F
-let cartMessage = document.querySelector(".message");
-let timeoutId;
-
-function addCart() {
-	cartMessage.innerHTML = "Added";
-	clearTimeout(timeoutId);
-
-	timeoutId = setTimeout(function () {
-		cartMessage.innerHTML = "";
-	}, 2000);
-}
-
-// Chalange - G
-/*setInterval(function () {
-	if (document.title === "App") {
-		document.title = "(2) New Message";
-	} else {
-		document.title = "App";
+document.body.addEventListener("keydown", (event) => {
+	if (event.key === "r") {
+		playGame("Rock");
+	} else if (event.key === "p") {
+		playGame("Paper");
+	} else if (event.key === "s") {
+		playGame("Scissors");
+	} else if (event.key === "a") {
+		autoPlay();
+	} else if (event.key === "Backspace") {
+		resetScore();
 	}
-}, 1000); */
+});
 
-// Chalange - H
-/*let message = 0;
+const playGame = (playerMove) => {
+	let computerGame = pickComputerMove();
+	let gameResult = "";
 
-function addMessage() {
-	message++;
-}
-function removeMessage() {
-	message--;
-}
-
-setInterval(function () {
-	if (document.title === "App" && message >= 1) {
-		document.title = `(${message}) New Message`;
-	} else {
-		document.title = "App";
-	}
-}, 1000); */
-
-// Chalange - I
-let message = 2;
-let intervelId;
-let isDisplayNotification;
-
-displayNotification();
-function displayNotification() {
-	if (isDisplayNotification) {
-		return;
-	}
-	isDisplayNotification = true;
-
-	intervelId = setInterval(function () {
-		if (document.title === "App") {
-			document.title = `(${message}) New Message`;
-		} else {
-			document.title = "App";
+	if (playerMove) {
+		if (computerGame === playerMove) {
+			gameResult = "Game Tie!";
 		}
-	}, 1000);
-}
-function stopNotification() {
-	isDisplayNotification = false;
-	clearInterval(intervelId);
-	document.title = "App";
-}
-
-function addMessage() {
-	message++;
-	displayNotification();
-}
-function removeMessage() {
-	message--;
-	if (message === 0) {
-		stopNotification();
 	}
-}
+	if (playerMove === "Rock") {
+		if (computerGame === "Paper") {
+			gameResult = "You Lose";
+		} else if (computerGame === "Scissors") {
+			gameResult = "You Win!";
+		}
+	} else if (playerMove === "Paper") {
+		if (computerGame === "Scissors") {
+			gameResult = "You Lose";
+		} else if (computerGame === "Rock") {
+			gameResult = "You Win!";
+		}
+	} else if (playerMove === "Scissors") {
+		if (computerGame === "Rock") {
+			gameResult = "You Lose";
+		} else if (computerGame === "Paper") {
+			gameResult = "You Win!";
+		}
+	}
+
+	if (gameResult === "You Win!") {
+		score.win += 1;
+	} else if (gameResult === "You Lose") {
+		score.losses += 1;
+	} else if (gameResult === "Game Tie!") {
+		score.ties += 1;
+	}
+
+	localStorage.setItem("score", JSON.stringify(score));
+	updateScore();
+
+	let gameResultInfo = document.querySelector(".game-result");
+	gameResultInfo.innerHTML = gameResult;
+	if (gameResult === "You Lose") {
+		gameResultInfo.style.color = "red";
+	} else if (gameResult === "You Win!") {
+		gameResultInfo.style.color = "green";
+	} else {
+		gameResultInfo.style.color = "blue";
+	}
+
+	document.querySelector(
+		".game-move"
+	).innerHTML = `Your are picked <u>${playerMove}</u>. Computer Picked <u>${computerGame}</u>`;
+
+	console.log(gameResult);
+};
+
+const resetScore = () => {
+	score.win = 0;
+	score.losses = 0;
+	score.ties = 0;
+
+	localStorage.removeItem("score");
+	updateScore();
+};
+document.querySelector(".btn-reset").addEventListener("click", () => {
+	showResetConfirmation();
+});
+
+const updateScore = () => {
+	let gameScore = `WIN: ${score.win}, LOSE: ${score.losses}, TIE: ${score.ties}`;
+	document.querySelector(".game-score").innerHTML = gameScore;
+};
+
+updateScore();
+
+let isAutoPlaying = false;
+let intervalId;
+let autoPlayButton = document.querySelector(".btn-auto");
+
+autoPlayButton.addEventListener("click", () => {
+	autoPlay();
+});
+
+const autoPlay = () => {
+	if (!isAutoPlaying) {
+		intervalId = setInterval(() => {
+			let playerMove = pickComputerMove();
+			playGame(playerMove);
+			autoPlayButton.innerHTML = "Stop Playing";
+		}, 1000);
+		isAutoPlaying = true;
+	} else {
+		clearInterval(intervalId);
+		autoPlayButton.innerHTML = "Auto Playing";
+		isAutoPlaying = false;
+	}
+};
+
+// Chalange - X
+let resetConfirmation = document.querySelector(".reset-confirmation");
+const showResetConfirmation = () => {
+	resetConfirmation.innerHTML = `
+		Are you sure you want to reset the score?
+		<button class="reset-confirm-yes reset-confirm-button">Yes</button>
+		<button class="reset-confirm-no reset-confirm-button">No</button>
+	`;
+	document
+		.querySelector(".reset-confirm-yes")
+		.addEventListener("click", () => {
+			resetScore();
+			hideResetConfirmation();
+		});
+	document
+		.querySelector(".reset-confirm-no")
+		.addEventListener("click", () => {
+			hideResetConfirmation();
+		});
+};
+
+const hideResetConfirmation = () => {
+	resetConfirmation.innerHTML = "";
+};
