@@ -19,3 +19,17 @@ input:focus {
 button {
     cursor: pointer;
 }
+
+.error {
+    color: crimson;
+    border: 1px dotted crimson;
+    padding: 15px;
+}
+.success {
+    color: limegreen;
+    border: 1px dotted limegreen;
+    padding: 15px;
+}
+p {
+    margin-bottom: 15px;
+}
