@@ -23,3 +23,24 @@ button {
 p {
     margin-bottom: 15px;
 }
+.controls {
+    display: flex;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+input {
+    height: 40px;
+    padding: 0 15px;
+    font-size: large;
+    width: 100px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#color {
+    padding: 5px;
+}
+canvas {
+    border: 2px solid gray;
+    border-radius: 4px;
+}
