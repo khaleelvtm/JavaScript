@@ -10,7 +10,14 @@
     </head>
 
     <body>
-        <canvas id="canvas"></canvas>
-        <script src="assets/scripts/game.js"></script>
+        <div class="painting">
+            <div class="controls">
+                <input type="color" id="color" />
+                <input type="number" value="3" id="thickness" min="1" />
+            </div>
+            <canvas id="canvas" width="500" height="500"></canvas>
+        </div>
+
+        <script src="assets/scripts/script.js"></script>
     </body>
 </html>
