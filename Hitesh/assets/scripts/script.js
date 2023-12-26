@@ -1,26 +1,18 @@
-//
-const navSlide = () => {
-	let navList = document.querySelector(".nav-list");
-	let burgerMenu = document.querySelector(".burger-menu");
-	let navLinks = document.querySelectorAll(".nav-list li");
+// JS
+// EP: 07 / 65
+let listPrice = 999;
+let sellingPrice = 799;
 
-	burgerMenu.addEventListener("click", () => {
-		navList.classList.toggle("nav-active");
+let discount = ((listPrice - sellingPrice) / listPrice) * 100;
 
-		// Animation Links
-		navLinks.forEach((link, index) => {
-			if (link.style.animation) {
-				link.style.animation = "";
-			} else {
-				link.style.animation = `navLinkFade 0.5s ease forwards ${
-					index / 5 + 0.3
-				}s`;
-			}
-		});
+console.log((listPrice - sellingPrice) / listPrice);
+console.log(Math.round(discount));
 
-		// Animation Burron
-		burgerMenu.classList.toggle("close");
-	});
-};
+// EP: 10 / 65
+let email = true;
+let google = false;
+let facebook = false;
 
-navSlide();
+if (email || google || facebook) {
+    console.log("Login Success!");
+}
